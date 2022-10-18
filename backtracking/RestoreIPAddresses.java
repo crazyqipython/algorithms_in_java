@@ -6,34 +6,29 @@ public class RestoreIPAddresses {
 
         List<String> res = new ArrayList<String>();
 
-        backtracking(res, "", s, 0, 0);
-        
+        backtracking(res, "", s, 0, 4);
+
         return res;
     }
 
-    public void backtracking(List<String> res, String temp, String s, int index, int begin){
-       
-        if(temp.length() > 4) return;
+    public void backtracking(List<String> res, String temp, String s, int index, int counts) {
 
-        if(temp.length() == s.length()){ 
-            res.add(temp);
+        if (counts < 0)
+            return;
+
+        if (counts == 0 && index == s.length()) {
+            res.add(temp.substring(0, temp.length() - 1));
             return;
         }
 
-        for(int i=index; i < s.length(); i++){
+        for (int i = index; i < Math.min(index + 3, s.length()); i++) {
 
-            String candi =  s.substring(begin, index+1);
+            String candi = s.substring(index, i + 1);
 
-            if(candi.equals("0") || ((candi.charAt(0) != '0') && Integer.parseInt(candi) <= 255 && 0 <= Integer.parseInt(candi))){
+            if (Integer.parseInt(candi) <= 255 && (i == index || candi.charAt(0) != '0')) {
 
-                temp = temp + candi; 
+                backtracking(res, temp + candi + ".", s, i + 1, counts - 1);
 
-                backtracking(res, temp, s, i + 1, i + candi.length());
-
-                temp = temp.substring(0,  temp.length() - candi.length() + 1);
-
-            }else{
-                continue;
             }
 
         }
