@@ -1,3 +1,4 @@
+package DP.internalDP;
 public class PalindromicSubstrings {
     public int countSubstrings(String s) {
         int len = s.length();

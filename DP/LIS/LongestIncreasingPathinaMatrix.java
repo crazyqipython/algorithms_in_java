@@ -1,3 +1,4 @@
+package DP.LIS;
 public class LongestIncreasingPathinaMatrix {
     public int longestIncreasingPath(int[][] matrix) {
         int res = 0;

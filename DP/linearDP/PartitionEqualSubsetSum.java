@@ -1,3 +1,4 @@
+package DP.linearDP;
 import java.util.*;
 //0/1 knapsack 
 public class PartitionEqualSubsetSum {

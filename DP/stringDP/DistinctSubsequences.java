@@ -1,3 +1,4 @@
+package DP.stringDP;
 
 public class DistinctSubsequences{
     public int numDistinct(String s, String t) {

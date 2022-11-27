@@ -1,3 +1,4 @@
+package DP.LCS;
 class EditDistance{
     public int minDistance(String word1, String word2) {
         int n = word1.length(), m = word2.length();

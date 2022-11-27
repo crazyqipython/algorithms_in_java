@@ -1,3 +1,4 @@
+package DP.internalDP;
 class BurstBalloons{
     public int maxCoins(int[] nums) {
         int[] inums = new int[nums.length + 2];
